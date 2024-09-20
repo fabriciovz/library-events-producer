@@ -1,9 +1,9 @@
 package com.fabribraguev.springboot.library_events_producer.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
@@ -12,5 +12,7 @@ import lombok.NoArgsConstructor;
 public class LibraryEvent {
     Integer libraryEventId;
     LibraryEventType libraryEventType;
+    @NotNull
+    @Valid
     Book book;
 }
