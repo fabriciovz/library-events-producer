@@ -55,7 +55,7 @@ public class LibraryEventsProducer {
         Integer key = libraryEvent.getLibraryEventId();
         String value = objectMapper.writeValueAsString(libraryEvent);
 
-        //1. Blocking call - get metadata about the kafka cluster
+        //1. Blocking call - get metadata about the kafka cluster -> max.block.ms (60000 ms defulut - 60s)
         //2. Block and wait until the message is sent to the kafka
         SendResult<Integer, String> sendResult = kafkaTemplate.send(topic, key, value)
                 //.get()
