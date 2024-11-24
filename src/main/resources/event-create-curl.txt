@@ -1,0 +1,11 @@
+curl --location 'http://localhost:8082/v1/libraryevent3' \
+--header 'Content-Type: application/json' \
+--data '{
+    "libraryEventId": null,
+    "libraryEventType": "NEW",
+    "book": {
+        "bookId": 456,
+        "bookName": "Kafka Using Spring Boot",
+        "bookAuthor": "Dilip"
+    }
+}'
